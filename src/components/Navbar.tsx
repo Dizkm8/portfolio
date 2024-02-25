@@ -43,7 +43,7 @@ const Navbar = () => {
     );
 
     return (
-        <Box sx={{ display: 'flex'}}>
+        <Box sx={{ display: 'flex' }}>
             <AppBar component="nav">
                 <Toolbar>
                     <IconButton
@@ -71,8 +71,7 @@ const Navbar = () => {
                                 key={item}
                                 sx={{
                                     color: '#fff',
-                                    marginRight: '1rem',
-                                    marginLeft: '1rem',
+                                    paddingX: 2,
                                 }}
                             >
                                 {item}
