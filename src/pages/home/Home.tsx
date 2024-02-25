@@ -1,6 +1,6 @@
 import { Divider } from '@mui/material';
-import AboutMe from './AboutMe';
-import Skills from './Skills';
+import AboutMe from './AboutMe/AboutMe';
+import Skills from './Skills/Skills';
 
 const Home = () => {
     return (
