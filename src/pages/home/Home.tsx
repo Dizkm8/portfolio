@@ -1,13 +1,13 @@
 import { Divider } from '@mui/material';
-import AboutMe from './AboutMe/AboutMe';
-import Skills from './Skills/Skills';
+import AboutMeView from './AboutMe/AboutMeView';
+import SkillsView from './Skills/SkillsView';
 
 const Home = () => {
     return (
         <>
-            <AboutMe />
+            <AboutMeView />
             <Divider />
-            <Skills />
+            <SkillsView />
         </>
     );
 };

@@ -1,54 +1,76 @@
-import { Container, Typography, Grid, Chip } from '@mui/material';
-import { styles } from './styles';
-import { userSkills } from './user-skills';
+import { Grid, SxProps, Theme } from '@mui/material';
+import SkillSection from '../../../components/SkillSection';
 
-const {
-    codingSkills,
-    devOpsSkills,
-    testingSkills,
-    designSkills,
-    projectManagementSkills,
-    versionControlSkills,
-    productivityTools,
-    softSkills,
-} = userSkills;
+interface Props {
+    codingSkills: string[];
+    devOpsSkills: string[];
+    testingSkills: string[];
+    designSkills: string[];
+    projectManagementSkills: string[];
+    versionControlSkills: string[];
+    productivityTools: string[];
+    softSkills: string[];
+    gridStyle: SxProps<Theme>;
+    chipStyle: SxProps<Theme>;
+}
 
-const skillSection = (skills: string[]) =>
-    skills.map((skill) => (
-        <Chip
-            key={skill}
-            label={skill}
-            variant="outlined"
-            sx={styles.skillChip}
-        />
-    ));
+const Skills = (props: Props) => {
+    const {
+        codingSkills,
+        devOpsSkills,
+        testingSkills,
+        designSkills,
+        projectManagementSkills,
+        versionControlSkills,
+        productivityTools,
+        softSkills,
+        chipStyle,
+        gridStyle,
+    } = props;
 
-const gridSection = (sectionTitle: string, skills: string[]) => (
-    <Grid item xs={12} md={4} mb={3}>
-        <Typography variant="h5" gutterBottom>
-            {sectionTitle}
-        </Typography>
-        {skillSection(skills)}
-    </Grid>
-);
-
-const Skills = () => {
     return (
-        <Container maxWidth="lg" sx={styles.container}>
-            <Typography variant="h3" component="h2" sx={styles.title}>
-                Skills
-            </Typography>
-            <Grid container spacing={2} sx={styles.skillGrid}>
-                {gridSection('Coding', codingSkills)}
-                {gridSection('Testing', testingSkills)}
-                {gridSection('DevOps', devOpsSkills)}
-                {gridSection('Design', designSkills)}
-                {gridSection('Project Management', projectManagementSkills)}
-                {gridSection('Version Control', versionControlSkills)}
-                {gridSection('Productivity Tools', productivityTools)}
-                {gridSection('Soft Skills', softSkills)}
-            </Grid>
-        </Container>
+        <Grid container spacing={2} sx={gridStyle}>
+            <SkillSection
+                sectionTitle="Coding"
+                skills={codingSkills}
+                skillChipStyle={chipStyle}
+            />
+            <SkillSection
+                sectionTitle="Testing"
+                skills={testingSkills}
+                skillChipStyle={chipStyle}
+            />
+            <SkillSection
+                sectionTitle="DevOps"
+                skills={devOpsSkills}
+                skillChipStyle={chipStyle}
+            />
+            <SkillSection
+                sectionTitle="Design"
+                skills={designSkills}
+                skillChipStyle={chipStyle}
+            />
+            <SkillSection
+                sectionTitle="Project Management"
+                skills={projectManagementSkills}
+                skillChipStyle={chipStyle}
+            />
+            <SkillSection
+                sectionTitle="Version Control"
+                skills={versionControlSkills}
+                skillChipStyle={chipStyle}
+            />
+            <SkillSection
+                sectionTitle="Productivity Tools"
+                skills={productivityTools}
+                skillChipStyle={chipStyle}
+            />
+            <SkillSection
+                sectionTitle="Soft Skills"
+                skills={softSkills}
+                skillChipStyle={chipStyle}
+            />
+        </Grid>
     );
 };
 

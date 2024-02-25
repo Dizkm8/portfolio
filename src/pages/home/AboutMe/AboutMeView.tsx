@@ -1,9 +1,8 @@
-import { Button, Container, Typography, useMediaQuery } from '@mui/material';
+import { Container, IconButton, Typography } from '@mui/material';
 import { styles } from './styles';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
-const AboutMe = () => {
-    const matches = useMediaQuery('(min-width:600px)');
-
+const AboutMeView = () => {
     return (
         <Container maxWidth="sm" sx={styles.container}>
             <img
@@ -18,11 +17,14 @@ const AboutMe = () => {
                 Software Engineering & Fullstack Web Developer. Passionate about
                 creating elegant solutions.
             </Typography>
-            <Button variant="contained" sx={styles.button}>
-                Download Resume
-            </Button>
+            <IconButton aria-label="delete" size="large">
+                <KeyboardDoubleArrowDownIcon
+                    fontSize="inherit"
+                    sx={styles.button}
+                />
+            </IconButton>
         </Container>
     );
 };
 
-export default AboutMe;
+export default AboutMeView;
