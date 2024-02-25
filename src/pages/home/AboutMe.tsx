@@ -5,6 +5,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        alignItems: 'center',
         height: '100vh',
         textAlign: 'center',
     },
@@ -15,6 +16,10 @@ const styles = {
     h2: {
         fontWeight: 300,
         color: '#808080',
+    },
+    button: {
+        marginTop: 3,
+        width: '50%',
     },
 };
 
@@ -28,7 +33,9 @@ const AboutMe = () => {
                 Software Engineering & Fullstack Web Developer. Passionate about
                 creating elegant solutions.
             </Typography>
-            <Button variant="contained">Download Resume</Button>
+            <Button variant="contained" sx={styles.button}>
+                Download Resume
+            </Button>
         </Container>
     );
 };
