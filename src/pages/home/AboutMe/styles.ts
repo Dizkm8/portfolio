@@ -8,7 +8,7 @@ export const styles = {
         textAlign: 'center',
     },
     image: {
-        maxWidth: '50%',
+        maxWidth: '55%',
         height: 'auto',
         borderRadius: '50%',
         marginBottom: '1rem',
