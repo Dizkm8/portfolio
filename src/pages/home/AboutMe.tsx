@@ -1,4 +1,4 @@
-import { Container, Typography } from '@mui/material';
+import { Button, Container, Typography } from '@mui/material';
 
 const styles = {
     container: {
@@ -14,20 +14,21 @@ const styles = {
     },
     h2: {
         fontWeight: 300,
-        color: '#808080'
+        color: '#808080',
     },
 };
 
 const AboutMe = () => {
     return (
-        <Container maxWidth="lg" sx={styles.container}>
+        <Container maxWidth="sm" sx={styles.container}>
             <Typography component="h1" variant="h2" sx={styles.h1}>
                 David Araya Cádiz
             </Typography>
-            <Typography component="h2" variant="h5" sx={styles.h2}>
+            <Typography component="p" variant="h5" sx={styles.h2}>
                 Software Engineering & Fullstack Web Developer. Passionate about
                 creating elegant solutions.
             </Typography>
+            <Button variant="contained">Download Resume</Button>
         </Container>
     );
 };
