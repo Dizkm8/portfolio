@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <>
             <AboutMeView />
-            <Divider />
+            <Divider id="targetSection" />
             <SkillsView />
         </>
     );

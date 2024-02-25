@@ -4,7 +4,7 @@ export const styles = {
         flexDirection: 'column',
         height: '100vh',
         textAlign: 'center',
-        paddingTop: 6,
+        paddingTop: 10,
     },
     title: {
         marginBottom: 3,

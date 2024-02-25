@@ -3,6 +3,17 @@ import { styles } from './styles';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 
 const AboutMeView = () => {
+    const smoothScrollToTarget = (targetId: string) => {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest',
+            });
+        }
+    };
+
     return (
         <Container maxWidth="sm" sx={styles.container}>
             <img
@@ -17,7 +28,11 @@ const AboutMeView = () => {
                 Software Engineering & Fullstack Web Developer. Passionate about
                 creating elegant solutions.
             </Typography>
-            <IconButton aria-label="delete" size="large">
+            <IconButton
+                aria-label="delete"
+                size="large"
+                onClick={() => smoothScrollToTarget('targetSection')}
+            >
                 <KeyboardDoubleArrowDownIcon
                     fontSize="inherit"
                     sx={styles.button}
