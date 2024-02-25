@@ -2,6 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { styles } from './styles';
 import { userSkills } from './user-skills';
 import Skills from './Skills';
+import { customID } from '../custom-id';
 
 const {
     codingSkills,
@@ -16,7 +17,7 @@ const {
 
 const SkillsView = () => {
     return (
-        <Container maxWidth="lg" sx={styles.container}>
+        <Container maxWidth="lg" sx={styles.container} id={customID.skillsView}>
             <Typography variant="h3" component="h2" sx={styles.title}>
                 Skills
             </Typography>

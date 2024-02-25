@@ -1,17 +1,12 @@
 import { Container, IconButton, Typography } from '@mui/material';
 import { styles } from './styles';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import smoothScrollToTarget from '../../../utils/scroll-to-target';
+import { customID } from '../custom-id';
 
 const AboutMeView = () => {
-    const smoothScrollToTarget = (targetId: string) => {
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-                inline: 'nearest',
-            });
-        }
+    const handleOnClick = () => {
+        smoothScrollToTarget(customID.skillsView);
     };
 
     return (
@@ -31,7 +26,7 @@ const AboutMeView = () => {
             <IconButton
                 aria-label="delete"
                 size="large"
-                onClick={() => smoothScrollToTarget('targetSection')}
+                onClick={handleOnClick}
             >
                 <KeyboardDoubleArrowDownIcon
                     fontSize="inherit"
