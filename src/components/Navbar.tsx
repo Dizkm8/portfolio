@@ -43,7 +43,7 @@ const Navbar = () => {
     );
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex'}}>
             <AppBar component="nav">
                 <Toolbar>
                     <IconButton
