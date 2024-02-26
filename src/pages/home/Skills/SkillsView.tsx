@@ -21,7 +21,8 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        height: 'min-content',
+        minHeight: '100vh',
         textAlign: 'center',
         paddingTop: 10,
     },
@@ -34,6 +35,9 @@ const styles = {
     },
     skillChip: {
         margin: '0.5rem',
+    },
+    sectionButton: {
+        margin: '2rem 0',
     },
 };
 
@@ -55,7 +59,10 @@ const SkillsView = () => {
                 gridStyle={styles.skillGrid}
                 chipStyle={styles.skillChip}
             />
-            <SectionButton targetID={customID.projectView} />
+            <SectionButton
+                targetID={customID.projectView}
+                sx={styles.sectionButton}
+            />
         </Container>
     );
 };

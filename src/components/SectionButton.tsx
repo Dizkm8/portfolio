@@ -1,9 +1,10 @@
-import { IconButton } from '@mui/material';
+import { IconButton, SxProps, Theme } from '@mui/material';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import smoothScrollToTarget from '../utils/scroll-to-target';
 
 interface Props {
     targetID: string;
+    sx?: SxProps<Theme>;
 }
 
 const styles = {
@@ -13,7 +14,7 @@ const styles = {
     },
 };
 const SectionButton = (props: Props) => {
-    const { targetID } = props;
+    const { targetID, sx } = props;
 
     const handleOnClick = (targetID: string) => {
         smoothScrollToTarget(targetID);
@@ -24,6 +25,7 @@ const SectionButton = (props: Props) => {
             aria-label="go-down"
             size="large"
             onClick={() => handleOnClick(targetID)}
+            sx={sx}
         >
             <KeyboardDoubleArrowDownIcon fontSize="inherit" sx={styles.icon} />
         </IconButton>
