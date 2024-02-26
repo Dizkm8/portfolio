@@ -4,7 +4,7 @@ import Home from './pages/home/Home';
 import smoothScrollToTarget from './utils/scroll-to-target';
 import { useEffect } from 'react';
 
-function App() {
+const App = () => {
     useEffect(() => {
         const hash = window.location.hash;
         if (hash) {
@@ -20,6 +20,6 @@ function App() {
             <Home />
         </>
     );
-}
+};
 
 export default App;

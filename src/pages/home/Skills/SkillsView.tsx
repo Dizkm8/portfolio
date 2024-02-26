@@ -1,8 +1,8 @@
 import { Container, Typography } from '@mui/material';
-import { styles } from './styles';
 import { userSkills } from './user-skills';
 import Skills from './Skills';
 import { customID } from '../custom-id';
+import SectionButton from '../../../components/SectionButton';
 
 const {
     codingSkills,
@@ -14,6 +14,28 @@ const {
     productivityTools,
     softSkills,
 } = userSkills;
+
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        textAlign: 'center',
+        paddingTop: 10,
+    },
+    title: {
+        marginBottom: 3,
+    },
+    skillGrid: {
+        marginTop: '2rem',
+        justifyContent: 'center',
+    },
+    skillChip: {
+        margin: '0.5rem',
+    },
+};
 
 const SkillsView = () => {
     return (
@@ -33,6 +55,7 @@ const SkillsView = () => {
                 gridStyle={styles.skillGrid}
                 chipStyle={styles.skillChip}
             />
+            <SectionButton targetID={customID.projectView} />
         </Container>
     );
 };
