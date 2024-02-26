@@ -21,7 +21,7 @@ const SectionButton = (props: Props) => {
 
     return (
         <IconButton
-            aria-label="delete"
+            aria-label="go-down"
             size="large"
             onClick={() => handleOnClick(targetID)}
         >

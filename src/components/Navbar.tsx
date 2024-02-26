@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -12,16 +11,59 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import NightlightRoundedIcon from '@mui/icons-material/NightlightRounded';
+import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
+import { useState } from 'react';
+
+interface Props {
+    changeTheme: () => void;
+}
 
 const drawerWidth = 240;
 const devName = 'David Araya';
 const navItems = ['About me', 'Projects', 'Skills', 'Contact'];
 
-const Navbar = () => {
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+const Navbar = (props: Props) => {
+    const { changeTheme } = props;
+
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
+    };
+
+    const handleDarkModeClick = () => {
+        setDarkMode((prevState) => !prevState);
+        changeTheme();
+    };
+
+    const darkModeButton = () => {
+        if (darkMode) {
+            return (
+                <IconButton
+                    aria-label="enable-dark-mode"
+                    size="large"
+                    onClick={handleDarkModeClick}
+                >
+                    <Brightness7RoundedIcon fontSize="inherit" />
+                </IconButton>
+            );
+        }
+        return (
+            <IconButton
+                aria-label="enable-dark-mode"
+                size="large"
+                onClick={handleDarkModeClick}
+            >
+                <NightlightRoundedIcon
+                    fontSize="inherit"
+                    sx={{
+                        color: '#fff',
+                    }}
+                />
+            </IconButton>
+        );
     };
 
     const drawer = (
@@ -77,6 +119,7 @@ const Navbar = () => {
                                 {item}
                             </Button>
                         ))}
+                        {darkModeButton()}
                     </Box>
                 </Toolbar>
             </AppBar>
