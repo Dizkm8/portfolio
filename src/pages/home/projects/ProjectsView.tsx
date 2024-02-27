@@ -1,5 +1,7 @@
 import { Container, Typography } from '@mui/material';
-import { customID } from '../home/custom-id';
+import { customID } from '../custom-id';
+import ProjectCard from '../../../components/ProjectCard';
+import useProjects from '../../../hooks/useProjects';
 
 const styles = {
     container: {
@@ -17,6 +19,12 @@ const styles = {
 };
 
 const ProjectsView = () => {
+    const projects = useProjects();
+
+    const projectsCards = projects.map((project) => (
+        <ProjectCard project={project} />
+    ));
+
     return (
         <Container
             maxWidth="lg"
@@ -26,6 +34,7 @@ const ProjectsView = () => {
             <Typography variant="h3" component="h2" sx={styles.title}>
                 Projects
             </Typography>
+            {projectsCards}
         </Container>
     );
 };

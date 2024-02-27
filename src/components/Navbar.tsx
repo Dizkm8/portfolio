@@ -12,7 +12,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import NightlightRoundedIcon from '@mui/icons-material/NightlightRounded';
-import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
+import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
 import { useState } from 'react';
 
 interface Props {
@@ -46,7 +46,7 @@ const Navbar = (props: Props) => {
                     size="large"
                     onClick={handleDarkModeClick}
                 >
-                    <Brightness7RoundedIcon fontSize="inherit" />
+                    <Brightness6RoundedIcon fontSize="inherit" />
                 </IconButton>
             );
         }
