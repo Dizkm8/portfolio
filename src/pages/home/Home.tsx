@@ -1,7 +1,7 @@
 import { Divider } from '@mui/material';
 import AboutMeView from './about-me/AboutMeView';
 import ProjectsView from './projects/ProjectsView';
-import SkillsView from './skills/SkillsView';
+import SkillsView from './Skills/SkillsView';
 
 const Home = () => {
     return (

@@ -1,8 +1,8 @@
 import { Container, Typography } from '@mui/material';
-import { userSkills } from './user-skills';
-import Skills from './Skills';
 import { customID } from '../custom-id';
 import SectionButton from '../../../components/SectionButton';
+import { userSkills } from './user-skills';
+import Skills from './Skills';
 
 const {
     codingSkills,
