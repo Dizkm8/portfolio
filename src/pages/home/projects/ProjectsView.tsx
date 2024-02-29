@@ -1,7 +1,7 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { customID } from '../custom-id';
-import ProjectCard from '../../../components/ProjectCard';
 import useProjects from '../../../hooks/useProjects';
+import ProjectsGrid from './ProjectsGrid';
 
 const styles = {
     container: {
@@ -9,7 +9,7 @@ const styles = {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100vh',
+        minHeight: '100vh',
         textAlign: 'center',
         paddingTop: 10,
     },
@@ -21,24 +21,16 @@ const styles = {
 const ProjectsView = () => {
     const projects = useProjects();
 
-    const projectsCards = projects.map((project) => (
-        <Grid item lg={6}>
-            <ProjectCard project={project} />
-        </Grid>
-    ));
-
     return (
         <Container
-            maxWidth="lg"
+            maxWidth="xl"
             sx={styles.container}
             id={customID.projectView}
         >
             <Typography variant="h3" component="h2" sx={styles.title}>
                 Projects
             </Typography>
-            <Grid container spacing={3}>
-                {projectsCards}
-            </Grid>
+            <ProjectsGrid projects={projects} />
         </Container>
     );
 };
