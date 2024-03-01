@@ -1,30 +1,19 @@
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import Navbar from './components/Navbar';
 import Home from './pages/home/Home';
 import smoothScrollToTarget from './utils/scroll-to-target';
 import { useEffect, useState } from 'react';
-
-const lightTheme = createTheme({
-    palette: {
-        mode: 'light',
-    },
-});
-
-const darkTheme = createTheme({
-    palette: {
-        mode: 'dark',
-    },
-});
+import { customTheme } from './theme/custom-theme';
 
 const App = () => {
-    const [theme, setTheme] = useState(lightTheme);
+    const [theme, setTheme] = useState(customTheme.lightTheme);
 
     const handleTheme = () => {
-        setTheme((prevState) => {
-            if (prevState.palette.mode === 'light') {
-                return darkTheme;
+        setTheme(({ palette }) => {
+            if (palette.mode === 'light') {
+                return customTheme.darkTheme;
             }
-            return lightTheme;
+            return customTheme.lightTheme;
         });
     };
 

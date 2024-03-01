@@ -12,6 +12,7 @@ const styles = {
         maxWidth: 345,
         height: 500,
         marginY: 3,
+        boxShadow: 10,
     },
     media: {
         height: 240,
@@ -45,8 +46,14 @@ const ProjectCard = (props: Props) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button variant="outlined" startIcon={<GitHubIcon />}>
+                <Button
+                    variant="outlined"
+                    startIcon={<GitHubIcon />}
+                >
                     Frontend
+                </Button>
+                <Button variant="outlined" startIcon={<GitHubIcon />}>
+                    Backend
                 </Button>
             </CardActions>
         </Card>
