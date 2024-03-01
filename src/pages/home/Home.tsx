@@ -10,7 +10,7 @@ const Home = () => {
             <Divider />
             <ProjectsView />
             <Divider />
-            <SkillsView />
+            {/* <SkillsView /> */}
 
         </>
     );
