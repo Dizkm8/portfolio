@@ -7,13 +7,13 @@ const styles = {
     container: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'start',
         alignItems: 'center',
         minHeight: '100vh',
         textAlign: 'center',
-        paddingTop: 10,
     },
     title: {
+        marginTop: 10,
         marginBottom: 3,
     },
 };

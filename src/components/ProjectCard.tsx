@@ -10,9 +10,14 @@ import { Project } from '../models/project';
 const styles = {
     card: {
         maxWidth: 345,
+        height: 500,
+        marginY: 3,
     },
     media: {
-        height: 280,
+        height: 240,
+    },
+    description: {
+        textAlign: 'left',
     },
 };
 
@@ -31,7 +36,11 @@ const ProjectCard = (props: Props) => {
                 <Typography gutterBottom variant="h5" component="div">
                     {title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={styles.description}
+                >
                     {description}
                 </Typography>
             </CardContent>
