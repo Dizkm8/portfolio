@@ -1,4 +1,6 @@
 export const customID = {
-    skillsView: 'skillsView',
-    projectView: 'projectView',
+    skillsView: 'skills',
+    projectsView: 'projects',
+    aboutMeView: 'about-me',
+    contactView: 'contact-me',
 };

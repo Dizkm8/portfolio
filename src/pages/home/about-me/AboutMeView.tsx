@@ -30,7 +30,11 @@ const styles = {
 
 const AboutMeView = () => {
     return (
-        <Container maxWidth="sm" sx={styles.container}>
+        <Container
+            maxWidth="sm"
+            sx={styles.container}
+            id={customID.aboutMeView}
+        >
             <img
                 src="david-araya-cadiz.webp"
                 alt="David Araya Cádiz"
@@ -43,7 +47,7 @@ const AboutMeView = () => {
                 Software Engineering & Fullstack Web Developer. Passionate about
                 creating elegant solutions.
             </Typography>
-            <SectionButton targetID={customID.skillsView} />
+            <SectionButton targetID={customID.projectsView} />
         </Container>
     );
 };

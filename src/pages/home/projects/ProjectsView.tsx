@@ -25,7 +25,7 @@ const ProjectsView = () => {
         <Container
             maxWidth="xl"
             sx={styles.container}
-            id={customID.projectView}
+            id={customID.projectsView}
         >
             <Typography variant="h3" component="h2" sx={styles.title}>
                 Projects

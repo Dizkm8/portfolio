@@ -8,9 +8,10 @@ const Home = () => {
         <>
             <AboutMeView />
             <Divider />
-            <SkillsView />
-            <Divider />
             <ProjectsView />
+            <Divider />
+            <SkillsView />
+
         </>
     );
 };
