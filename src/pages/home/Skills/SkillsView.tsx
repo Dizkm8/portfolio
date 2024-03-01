@@ -60,7 +60,7 @@ const SkillsView = () => {
                 chipStyle={styles.skillChip}
             />
             <SectionButton
-                targetID={customID.projectView}
+                targetID={customID.projectsView}
                 sx={styles.sectionButton}
             />
         </Container>
