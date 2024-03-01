@@ -21,7 +21,7 @@ const ProjectsGrid = (props: Props) => {
     return (
         <Grid container>
             {projects.map((project) => (
-                <Grid item lg={6} sx={styles.container}>
+                <Grid key={project.title} item lg={6} sx={styles.container}>
                     <ProjectCard project={project} />
                 </Grid>
             ))}
