@@ -5,6 +5,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Project } from '../models/project';
 import SourceCodeButton from './SourceCodeButton';
+import Divider from '@mui/material/Divider';
+import { CardActionArea } from '@mui/material';
 
 const styles = {
     card: {
@@ -19,6 +21,9 @@ const styles = {
     description: {
         textAlign: 'left',
     },
+    title: {
+        textAlign: 'center',
+    },
 };
 
 interface Props {
@@ -27,13 +32,21 @@ interface Props {
 
 const ProjectCard = (props: Props) => {
     const { project } = props;
-    const { title, image, description } = project;
+    const { title, image, description, frontendRepo, backendRepo } = project;
 
     return (
         <Card sx={styles.card}>
-            <CardMedia sx={styles.media} image={image} title="Dvd" />
+            <CardActionArea>
+                <CardMedia sx={styles.media} image={image} title="Dvd" />
+            </CardActionArea>
+            <Divider />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                    sx={styles.title}
+                >
                     {title}
                 </Typography>
                 <Typography
@@ -45,8 +58,20 @@ const ProjectCard = (props: Props) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <SourceCodeButton fullWidth={true}>Frontend</SourceCodeButton>
-                <SourceCodeButton fullWidth={true}>Backend</SourceCodeButton>
+                <SourceCodeButton
+                    fullWidth={true}
+                    href={frontendRepo}
+                    target="_blank"
+                >
+                    Frontend
+                </SourceCodeButton>
+                <SourceCodeButton
+                    fullWidth={true}
+                    href={backendRepo}
+                    target="_blank"
+                >
+                    Backend
+                </SourceCodeButton>
             </CardActions>
         </Card>
     );

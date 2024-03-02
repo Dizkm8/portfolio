@@ -10,15 +10,19 @@ declare module '@mui/material/Button' {
 
 interface SourceCodeButtonProps extends ButtonProps {
     children: ReactNode;
+    target?: string;
 }
 
 const SourceCodeButton = (sourceCodeButtonProps: SourceCodeButtonProps) => {
-    const { children, ...props } = sourceCodeButtonProps;
+    const { children, target, ...props } = sourceCodeButtonProps;
     return (
+        // @ts-expect-error: ts-2769 do not recognize blank
         <Button
             variant="outlined"
             color="cBlack"
             startIcon={<GitHubIcon />}
+            target={target}
+            rel="noopener"
             {...props}
         >
             {children}
