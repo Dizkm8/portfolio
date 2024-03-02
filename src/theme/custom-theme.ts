@@ -18,22 +18,22 @@ const baseDark = createTheme({
 
 const darkTheme = createTheme(baseDark, {
     palette: {
-        salmon: baseDark.palette.augmentColor({
+        cBlack: baseDark.palette.augmentColor({
             color: {
-                main: '#FF5733',
+                main: '#FFFFFF',
             },
-            name: 'salmon',
+            name: 'cBlack',
         }),
     },
 });
 
 const lightTheme = createTheme(baseLight, {
     palette: {
-        salmon: baseLight.palette.augmentColor({
+        cBlack: baseLight.palette.augmentColor({
             color: {
-                main: '#FF5733',
+                main: '#000000',
             },
-            name: 'salmon',
+            name: 'cBlack',
         }),
     },
 });

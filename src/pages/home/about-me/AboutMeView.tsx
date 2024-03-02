@@ -12,6 +12,7 @@ const styles = {
         textAlign: 'center',
     },
     image: {
+        marginTop: 50,
         maxWidth: '55%',
         height: 'auto',
         borderRadius: '50%',

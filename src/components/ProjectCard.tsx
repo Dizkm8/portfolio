@@ -2,10 +2,9 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import { Project } from '../models/project';
+import SourceCodeButton from './SourceCodeButton';
 
 const styles = {
     card: {
@@ -46,15 +45,8 @@ const ProjectCard = (props: Props) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button
-                    variant="outlined"
-                    startIcon={<GitHubIcon />}
-                >
-                    Frontend
-                </Button>
-                <Button variant="outlined" startIcon={<GitHubIcon />}>
-                    Backend
-                </Button>
+                <SourceCodeButton fullWidth={true}>Frontend</SourceCodeButton>
+                <SourceCodeButton fullWidth={true}>Backend</SourceCodeButton>
             </CardActions>
         </Card>
     );
