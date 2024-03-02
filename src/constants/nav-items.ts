@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
     },
     {
         name: 'Contact',
-        id: customID.contactView,
+        id: customID.contactMeView,
     },
 ];
 
