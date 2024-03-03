@@ -1,5 +1,5 @@
 import { RegisterOptions } from 'react-hook-form';
-import { ContactMeFormValues } from '../pages/home/contact-me/ContactMeForm';
+import { ContactMeFormValues } from '../types/contact-me-form-values';
 
 export interface ContactMeInformation {
     name: string;

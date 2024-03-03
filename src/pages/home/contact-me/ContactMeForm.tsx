@@ -2,17 +2,12 @@ import { useForm } from 'react-hook-form';
 import { ContactMeInformation } from '../../../interfaces/contact-me-information.interface';
 import FormField from '../../../components/FormField';
 import { Button, SxProps, Theme } from '@mui/material';
+import { ContactMeFormValues } from '../../../types/contact-me-form-values';
 
 interface Props {
     fieldsData: ContactMeInformation[];
     fieldSx?: SxProps<Theme>;
 }
-
-export type ContactMeFormValues = {
-    name: string;
-    email: string;
-    reason: string;
-};
 
 const defaultValues: ContactMeFormValues = {
     name: '',

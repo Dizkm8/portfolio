@@ -1,7 +1,7 @@
 import { SxProps, TextField, Theme } from '@mui/material';
 import { Control, Controller, RegisterOptions } from 'react-hook-form';
 import { FieldInformation } from '../interfaces/field-information.interface';
-import { ContactMeFormValues } from '../pages/home/contact-me/ContactMeForm';
+import { ContactMeFormValues } from '../types/contact-me-form-values';
 
 interface Props {
     sx?: SxProps<Theme> | undefined;
