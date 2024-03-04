@@ -1,6 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import { customID } from '../custom-id';
 import SectionButton from '../../../components/SectionButton';
+import { useTranslation } from 'react-i18next';
 
 const styles = {
     container: {
@@ -30,6 +31,8 @@ const styles = {
 };
 
 const AboutMeView = () => {
+    const { t } = useTranslation();
+
     return (
         <Container
             maxWidth="sm"
@@ -45,8 +48,7 @@ const AboutMeView = () => {
                 David Araya Cádiz
             </Typography>
             <Typography component="p" variant="h5" sx={styles.h2}>
-                Software Engineering & Fullstack Web Developer. Passionate about
-                creating elegant solutions.
+                {t('About me')}
             </Typography>
             <SectionButton targetID={customID.projectsView} />
         </Container>

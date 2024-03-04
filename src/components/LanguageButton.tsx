@@ -6,6 +6,12 @@ import IconButton from '@mui/material/IconButton';
 import GTranslateIcon from '@mui/icons-material/GTranslate';
 import { useTheme } from '@mui/material/styles';
 import customColors from '../constants/custom-colors';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import {
+    ALL_LANGUAGES,
+    SUPPORTED_LANGUAGES,
+} from '../i18n/supporter-languagues';
 
 const styles = {
     menu: {
@@ -37,20 +43,34 @@ const styles = {
 };
 
 const LanguageButton = () => {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const { i18n } = useTranslation();
+    const theme = useTheme();
+
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
+
+    const changeLanguageHandler = (lang: SUPPORTED_LANGUAGES) => {
+        if (ALL_LANGUAGES.includes(lang)) {
+            i18n.changeLanguage(lang);
+            return;
+        }
+        console.error(`Language not supported: ${lang}`);
+    };
+
     const handleClose = () => {
         setAnchorEl(null);
     };
 
-    const theme = useTheme();
+    const handleLanguageButtonClick = (lang: string) => {
+        handleClose();
+        changeLanguageHandler(lang as SUPPORTED_LANGUAGES);
+    };
+
     const iconColor =
-        theme.palette.mode === 'light'
-            ? customColors.gray
-            : customColors.white;
+        theme.palette.mode === 'light' ? customColors.gray : customColors.white;
 
     return (
         <>
@@ -77,11 +97,19 @@ const LanguageButton = () => {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem onClick={handleClose}>
+                <MenuItem
+                    onClick={() =>
+                        handleLanguageButtonClick(SUPPORTED_LANGUAGES.ES)
+                    }
+                >
                     <Avatar src="spain-flag.webp" />
                     Español
                 </MenuItem>
-                <MenuItem onClick={handleClose}>
+                <MenuItem
+                    onClick={() =>
+                        handleLanguageButtonClick(SUPPORTED_LANGUAGES.EN)
+                    }
+                >
                     <Avatar src="us-flag.webp" />
                     English
                 </MenuItem>
