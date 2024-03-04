@@ -14,6 +14,7 @@ const Home = () => {
             <Divider />
             <ContactMeView />
             <Divider />
+            
             {/* <SkillsView /> */}
         </>
     );

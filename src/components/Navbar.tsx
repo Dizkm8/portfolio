@@ -29,7 +29,7 @@ const Navbar = (props: Props) => {
 
     const textColor =
         theme.palette.mode === 'light'
-            ? customColors.black
+            ? customColors.gray
             : customColors.white;
 
     const navBarColor =

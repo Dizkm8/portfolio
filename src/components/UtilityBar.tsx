@@ -8,9 +8,9 @@ import { NavItem } from '../interfaces/nav-item.interface';
 import { useTheme } from '@mui/material/styles';
 import customColors from '../constants/custom-colors';
 import { useMediaQuery } from '@mui/material';
-import NightlightRoundedIcon from '@mui/icons-material/NightlightRounded';
-import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
 import { useState } from 'react';
+import ThemeChangerButton from './ThemeChangerButton';
+import LanguageButton from './LanguageButton';
 
 interface Props {
     devName: string;
@@ -45,34 +45,6 @@ const UtilityBar = (props: Props) => {
     const handleDarkModeClick = () => {
         setDarkMode((prevState) => !prevState);
         changeTheme();
-    };
-
-    const themeChangerButton = () => {
-        if (darkMode) {
-            return (
-                <IconButton
-                    aria-label="enable-dark-mode"
-                    size="large"
-                    onClick={handleDarkModeClick}
-                >
-                    <Brightness6RoundedIcon fontSize="inherit" />
-                </IconButton>
-            );
-        }
-        return (
-            <IconButton
-                aria-label="enable-dark-mode"
-                size="large"
-                onClick={handleDarkModeClick}
-            >
-                <NightlightRoundedIcon
-                    fontSize="inherit"
-                    sx={{
-                        color: customColors.black,
-                    }}
-                />
-            </IconButton>
-        );
     };
 
     const toolbar = (
@@ -115,7 +87,11 @@ const UtilityBar = (props: Props) => {
                         {name}
                     </Button>
                 ))}
-                {themeChangerButton()}
+                <LanguageButton />
+                <ThemeChangerButton
+                    isDarkMode={darkMode}
+                    handleDarkModeClick={handleDarkModeClick}
+                />
             </Box>
         </Toolbar>
     );
@@ -132,7 +108,13 @@ const UtilityBar = (props: Props) => {
                 }}
             >
                 {toolbar}
-                {themeChangerButton()}
+                <Box>
+                    <LanguageButton />
+                    <ThemeChangerButton
+                        isDarkMode={darkMode}
+                        handleDarkModeClick={handleDarkModeClick}
+                    />
+                </Box>
             </Box>
         );
     }
