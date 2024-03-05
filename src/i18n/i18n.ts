@@ -8,10 +8,10 @@ i18n.use(initReactI18next).init({
     debug: true,
     resources: {
         en: {
-            translation: enTranslations, // Set English translations from JSON file
+            translation: enTranslations,
         },
         es: {
-            translation: esTranslations, // Set Spanish translations from JSON file
+            translation: esTranslations,
         },
     },
 });

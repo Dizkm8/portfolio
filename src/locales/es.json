@@ -1,3 +1,6 @@
 {
-    "About me": "Ingeniero de Software y Desarrollador Web Fullstack. Apasionado por crear soluciones elegantes."
+    "About me": "Ingeniero de Software y Desarrollador Web Fullstack. Apasionado por crear soluciones elegantes.",
+    "Cubi12 description": "Cubi12 es un proyecto de código abierto para ayudar a los estudiantes de la UCN en Chile a comprender todas las asignaturas que pueden tomar y su progreso en la carrera. Proporciona una malla interactiva y seguimiento del usuario.",
+    "Psicoapp description": "Utilizando un moderador impulsado por GPT, PsicoApp es un blog público para publicar y responder sobre temas de psicología y salud mental. También ayuda a los psicólogos a gestionar sus pacientes y citas. Proporciona un calendario y un sistema de gestión de pacientes.",
+    "Nessfit description": "Nessfit es una aplicación web para gestionar el alquiler de instalaciones deportivas. Proporciona un calendario y un sistema de gestión de usuarios."
 }

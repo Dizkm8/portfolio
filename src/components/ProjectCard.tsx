@@ -7,6 +7,7 @@ import { Project } from '../models/project';
 import SourceCodeButton from './SourceCodeButton';
 import Divider from '@mui/material/Divider';
 import { CardActionArea } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const styles = {
     card: {
@@ -33,6 +34,7 @@ interface Props {
 const ProjectCard = (props: Props) => {
     const { project } = props;
     const { title, image, description, frontendRepo, backendRepo } = project;
+    const { t } = useTranslation();
 
     return (
         <Card sx={styles.card}>
@@ -54,7 +56,7 @@ const ProjectCard = (props: Props) => {
                     color="text.secondary"
                     sx={styles.description}
                 >
-                    {description}
+                    {t(description)}
                 </Typography>
             </CardContent>
             <CardActions>
