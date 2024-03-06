@@ -2,6 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { customID } from '../custom-id';
 import useFieldsData from '../../../hooks/useFieldsData';
 import ContactMeForm from './ContactMeForm';
+import { useTranslation } from 'react-i18next';
 
 const styles = {
     container: {
@@ -23,6 +24,7 @@ const styles = {
 
 const ContactMeView = () => {
     const fieldsData = useFieldsData();
+    const { t } = useTranslation();
 
     return (
         <Container
@@ -31,7 +33,7 @@ const ContactMeView = () => {
             id={customID.contactMeView}
         >
             <Typography variant="h3" component="h2" sx={styles.title}>
-                Contact me
+                {t('contactMeTitle')}
             </Typography>
             <ContactMeForm fieldsData={fieldsData} fieldSx={styles.input} />
         </Container>

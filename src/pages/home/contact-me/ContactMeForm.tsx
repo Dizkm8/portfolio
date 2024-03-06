@@ -3,6 +3,7 @@ import { ContactMeInformation } from '../../../interfaces/contact-me-information
 import FormField from '../../../components/FormField';
 import { Button, SxProps, Theme } from '@mui/material';
 import { ContactMeFormValues } from '../../../types/contact-me-form-values';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     fieldsData: ContactMeInformation[];
@@ -16,27 +17,30 @@ const defaultValues: ContactMeFormValues = {
 };
 
 const ContactMeForm = (props: Props) => {
+    const { fieldsData, fieldSx } = props;
+
     const {
         handleSubmit,
         control,
         formState: { errors },
     } = useForm<ContactMeFormValues>({ defaultValues });
 
-    const { fieldsData, fieldSx } = props;
+    const { t } = useTranslation();
 
     const onSubmit = (data: ContactMeFormValues) => {
         console.table(data);
     };
 
     const fieldInputs = fieldsData.map((field) => {
+        console.log(field.name);
         const information = {
             name: field.name,
-            label: field.name,
+            label: t(field.label),
             multiline: field.multiline,
             rows: field.rows,
-            placeholder: field.placeholder,
+            placeholder: t(field.placeholder),
             error: Boolean(errors[field.name]),
-            helperText: errors[field.name]?.message,
+            helperText: t(errors[field.name]?.message),
         };
 
         return (

@@ -3,18 +3,18 @@ import { ContactMeInformation } from '../interfaces/contact-me-information.inter
 const nameField: ContactMeInformation = {
     name: 'name',
     rules: {
-        required: 'This field is required.',
+        required: 'requiredField',
         minLength: {
             value: 3,
-            message: 'Name must be at least 3 characters long.',
+            message: 'minLengthField',
         },
         maxLength: {
             value: 100,
-            message: 'Name must be at most 100 characters long.',
+            message: 'maxLengthField',
         },
     },
-    label: 'Your name',
-    placeholder: 'Ex: John Doe',
+    label: 'nameLabel',
+    placeholder: 'nameExample',
     multiline: false,
     rows: 1,
 };
@@ -22,18 +22,18 @@ const nameField: ContactMeInformation = {
 const emailField: ContactMeInformation = {
     name: 'email',
     rules: {
-        required: 'This field is required.',
+        required: 'requiredField',
         maxLength: {
             value: 100,
-            message: 'Email must be at most 100 characters long.',
+            message: 'maxLengthField',
         },
         pattern: {
             value: /\S+@\S+\.\S+/,
-            message: 'Invalid email.',
+            message: 'invalidEmail',
         },
     },
-    label: 'Your email',
-    placeholder: 'Ex: contoso@your-email.com',
+    label: 'emailLabel',
+    placeholder: 'emailExample',
     multiline: false,
     rows: 1,
 };
@@ -41,18 +41,18 @@ const emailField: ContactMeInformation = {
 const reasonField: ContactMeInformation = {
     name: 'reason',
     rules: {
-        required: 'This field is required.',
+        required: 'requiredField',
         minLength: {
             value: 3,
-            message: 'Content must be at least 3 characters long.',
+            message: 'minLengthField',
         },
         maxLength: {
             value: 500,
-            message: 'Content must be at most 100 characters long.',
+            message: 'maxLengthField',
         },
     },
-    label: 'How can I help you?',
-    placeholder: 'Ex: I want a website for my business.',
+    label: 'reasonLabel',
+    placeholder: 'reasonExample',
     multiline: true,
     rows: 4,
 };

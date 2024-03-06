@@ -2,6 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { customID } from '../custom-id';
 import useProjects from '../../../hooks/useProjects';
 import ProjectsGrid from './ProjectsGrid';
+import { useTranslation } from 'react-i18next';
 
 const styles = {
     container: {
@@ -20,6 +21,7 @@ const styles = {
 
 const ProjectsView = () => {
     const projects = useProjects();
+    const { t } = useTranslation();
 
     return (
         <Container
@@ -28,7 +30,7 @@ const ProjectsView = () => {
             id={customID.projectsView}
         >
             <Typography variant="h3" component="h2" sx={styles.title}>
-                Projects
+                {t('projectsTitle')}
             </Typography>
             <ProjectsGrid projects={projects} />
         </Container>
