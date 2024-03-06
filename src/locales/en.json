@@ -14,5 +14,6 @@
     "emailExample": "Ex: john.doe@contoso.com",
     "nameExample": "Ex: John Doe",
     "projectsTitle": "Projects",
-    "contactMeTitle": "Contact Me"
+    "contactMeTitle": "Contact Me",
+    "send": "Send"
 }

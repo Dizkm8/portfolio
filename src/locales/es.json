@@ -14,5 +14,6 @@
     "emailExample": "Ej: juan.perez@correo.com",
     "nameExample": "Ej: Juan Perez",
     "projectsTitle": "Proyectos",
-    "contactMeTitle": "Contáctame"
+    "contactMeTitle": "Contáctame",
+    "send": "Enviar"
 }

@@ -62,7 +62,7 @@ const ContactMeForm = (props: Props) => {
                 variant="contained"
                 onClick={handleSubmit(onSubmit)}
             >
-                Enviar
+                {t('send')}
             </Button>
         </form>
     );
