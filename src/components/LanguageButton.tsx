@@ -3,7 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
-import GTranslateIcon from '@mui/icons-material/GTranslate';
+import LanguageIcon from '@mui/icons-material/Language';
 import { useTheme } from '@mui/material/styles';
 import customColors from '../constants/custom-colors';
 import { useState } from 'react';
@@ -85,7 +85,7 @@ const LanguageButton = () => {
                     color: iconColor,
                 }}
             >
-                <GTranslateIcon />
+                <LanguageIcon />
             </IconButton>
             <Menu
                 anchorEl={anchorEl}
