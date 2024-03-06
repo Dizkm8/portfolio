@@ -3,20 +3,20 @@ import { customID } from '../pages/home/custom-id';
 
 const navItems: NavItem[] = [
     {
-        name: 'About me',
+        name: 'aboutMeNav',
         id: customID.aboutMeView,
     },
     {
-        name: 'Projects',
+        name: 'projectsNav',
         id: customID.projectsView,
     },
     {
-        name: 'Skills',
-        id: customID.skillsView,
+        name: 'contactMeNav',
+        id: customID.contactMeView,
     },
     {
-        name: 'Contact',
-        id: customID.contactMeView,
+        name: 'skillsNav',
+        id: customID.skillsView,
     },
 ];
 

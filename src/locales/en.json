@@ -15,5 +15,9 @@
     "nameExample": "Ex: John Doe",
     "projectsTitle": "Projects",
     "contactMeTitle": "Contact Me",
-    "send": "Send"
+    "send": "Send",
+    "aboutMeNav": "ABOUT ME",
+    "projectsNav": "PROJECTS",
+    "contactMeNav": "CONTACT ME",
+    "skillsNav": "SKILLS"
 }

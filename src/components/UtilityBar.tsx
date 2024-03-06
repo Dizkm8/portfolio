@@ -11,6 +11,7 @@ import { useMediaQuery } from '@mui/material';
 import { useState } from 'react';
 import ThemeChangerButton from './ThemeChangerButton';
 import LanguageButton from './LanguageButton';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     devName: string;
@@ -34,6 +35,7 @@ const UtilityBar = (props: Props) => {
     } = props;
     const theme = useTheme();
     const [darkMode, setDarkMode] = useState(false);
+    const { t } = useTranslation();
 
     const burgerColor =
         theme.palette.mode === 'light'
@@ -84,7 +86,7 @@ const UtilityBar = (props: Props) => {
                         }}
                         onClick={() => handleOnButtonClick(id)}
                     >
-                        {name}
+                        {t(name)}
                     </Button>
                 ))}
                 <LanguageButton />

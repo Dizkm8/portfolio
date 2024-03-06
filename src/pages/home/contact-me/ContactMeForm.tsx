@@ -28,11 +28,10 @@ const ContactMeForm = (props: Props) => {
     const { t } = useTranslation();
 
     const onSubmit = (data: ContactMeFormValues) => {
-        console.table(data);
+        console.log(data);
     };
 
     const fieldInputs = fieldsData.map((field) => {
-        console.log(field.name);
         const information = {
             name: field.name,
             label: t(field.label),

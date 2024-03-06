@@ -15,6 +15,7 @@ import { useTheme } from '@mui/material/styles';
 import customColors from '../constants/custom-colors';
 import UtilityBar from './UtilityBar';
 import { NavItem } from '../interfaces/nav-item.interface';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     changeTheme: () => void;
@@ -26,11 +27,10 @@ const devName = 'David Araya';
 const Navbar = (props: Props) => {
     const { changeTheme } = props;
     const theme = useTheme();
+    const { t } = useTranslation();
 
     const textColor =
-        theme.palette.mode === 'light'
-            ? customColors.gray
-            : customColors.white;
+        theme.palette.mode === 'light' ? customColors.gray : customColors.white;
 
     const navBarColor =
         theme.palette.mode === 'light'
@@ -70,7 +70,7 @@ const Navbar = (props: Props) => {
                             sx={{ textAlign: 'center' }}
                             onClick={() => handleOnButtonClick(id)}
                         >
-                            <ListItemText primary={name} />
+                            <ListItemText primary={t(name)} />
                         </ListItemButton>
                     </ListItem>
                 ))}
