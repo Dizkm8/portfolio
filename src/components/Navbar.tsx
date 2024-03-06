@@ -11,31 +11,24 @@ import { useState } from 'react';
 import smoothScrollToTarget from '../utils/scroll-to-target';
 import useNavItems from '../hooks/useNavItems';
 import { customID } from '../pages/home/custom-id';
-import { useTheme } from '@mui/material/styles';
 import customColors from '../constants/custom-colors';
 import UtilityBar from './UtilityBar';
 import { NavItem } from '../interfaces/nav-item.interface';
 import { useTranslation } from 'react-i18next';
-
-interface Props {
-    changeTheme: () => void;
-}
+import { useThemeMode } from '../hooks/useThemeMode';
 
 const drawerWidth = 240;
 const devName = 'David Araya';
 
-const Navbar = (props: Props) => {
-    const { changeTheme } = props;
-    const theme = useTheme();
+const Navbar = () => {
+    const { theme, invertTheme } = useThemeMode();
     const { t } = useTranslation();
 
     const textColor =
-        theme.palette.mode === 'light' ? customColors.gray : customColors.white;
+        theme === 'light' ? customColors.gray : customColors.white;
 
     const navBarColor =
-        theme.palette.mode === 'light'
-            ? customColors.white
-            : customColors.black;
+        theme === 'light' ? customColors.white : customColors.black;
 
     const navItems = useNavItems();
 
@@ -93,7 +86,7 @@ const Navbar = (props: Props) => {
                     handleOnButtonClick={handleOnButtonClick}
                     handleOnDevNameClick={handleOnDevNameClick}
                     navItems={navItems}
-                    changeTheme={changeTheme}
+                    changeTheme={invertTheme}
                 />
             </AppBar>
             <nav>
