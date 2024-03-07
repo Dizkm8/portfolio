@@ -12,7 +12,7 @@ import { useTranslation } from 'react-i18next';
 const styles = {
     card: {
         maxWidth: 345,
-        height: 500,
+        minHeight: 500,
         marginY: 3,
         boxShadow: 10,
     },
@@ -24,6 +24,9 @@ const styles = {
     },
     title: {
         textAlign: 'center',
+    },
+    cardContent: {
+        minHeight: 220,
     },
 };
 
@@ -42,7 +45,7 @@ const ProjectCard = (props: Props) => {
                 <CardMedia sx={styles.media} image={image} title="Dvd" />
             </CardActionArea>
             <Divider />
-            <CardContent>
+            <CardContent sx={styles.cardContent}>
                 <Typography
                     gutterBottom
                     variant="h5"
