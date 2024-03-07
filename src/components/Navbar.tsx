@@ -15,13 +15,13 @@ import customColors from '../constants/custom-colors';
 import UtilityBar from './UtilityBar';
 import { NavItem } from '../interfaces/nav-item.interface';
 import { useTranslation } from 'react-i18next';
-import { useThemeMode } from '../hooks/useThemeMode';
+import { useStorage } from '../hooks/useStorage';
 
 const drawerWidth = 240;
 const devName = 'David Araya';
 
 const Navbar = () => {
-    const { theme } = useThemeMode();
+    const { theme } = useStorage();
     const { t } = useTranslation();
 
     const textColor =

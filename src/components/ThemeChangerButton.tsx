@@ -2,10 +2,10 @@ import { IconButton } from '@mui/material';
 import Brightness6RoundedIcon from '@mui/icons-material/Brightness6Rounded';
 import NightlightRoundedIcon from '@mui/icons-material/NightlightRounded';
 import customColors from '../constants/custom-colors';
-import { useThemeMode } from '../hooks/useThemeMode';
+import { useStorage } from '../hooks/useStorage';
 
 const ThemeChangerButton = () => {
-    const { theme, invertTheme } = useThemeMode();
+    const { theme, invertTheme } = useStorage();
 
     const handleDarkModeClick = () => {
         invertTheme();

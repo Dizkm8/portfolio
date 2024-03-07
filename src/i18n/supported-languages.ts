@@ -1,6 +1,6 @@
 export enum SUPPORTED_LANGUAGES {
-    ES = 'es',
-    EN = 'en',
+    SPANISH = 'es',
+    ENGLISH = 'en',
 }
 
 export const ALL_LANGUAGES = Object.values(SUPPORTED_LANGUAGES);

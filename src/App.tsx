@@ -5,10 +5,10 @@ import smoothScrollToTarget from './utils/scroll-to-target';
 import { useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/i18n';
-import { useThemeMode } from './hooks/useThemeMode';
+import { useStorage } from './hooks/useStorage';
 
 const App = () => {
-    const { theme, muiTheme, setTheme } = useThemeMode();
+    const { theme, muiTheme, setTheme } = useStorage();
 
     useEffect(() => {
         const hash = window.location.hash;

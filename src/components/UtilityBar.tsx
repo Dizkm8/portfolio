@@ -10,7 +10,7 @@ import { useMediaQuery } from '@mui/material';
 import ThemeChangerButton from './ThemeChangerButton';
 import LanguageButton from './LanguageButton';
 import { useTranslation } from 'react-i18next';
-import { useThemeMode } from '../hooks/useThemeMode';
+import { useStorage } from '../hooks/useStorage';
 
 interface Props {
     devName: string;
@@ -31,7 +31,7 @@ const UtilityBar = (props: Props) => {
         navItems,
     } = props;
     const { t } = useTranslation();
-    const { theme } = useThemeMode();
+    const { theme } = useStorage();
 
     const burgerColor =
         theme === 'light' ? customColors.black : customColors.white;

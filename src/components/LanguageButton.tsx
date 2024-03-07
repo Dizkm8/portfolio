@@ -10,8 +10,8 @@ import { useTranslation } from 'react-i18next';
 import {
     ALL_LANGUAGES,
     SUPPORTED_LANGUAGES,
-} from '../i18n/supporter-languagues';
-import { useThemeMode } from '../hooks/useThemeMode';
+} from '../i18n/supported-languages';
+import { useStorage } from '../hooks/useStorage';
 
 const styles = {
     menu: {
@@ -44,7 +44,7 @@ const styles = {
 
 const LanguageButton = () => {
     const { i18n } = useTranslation();
-    const { theme, language, setLanguage } = useThemeMode();
+    const { theme, language, setLanguage } = useStorage();
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -105,7 +105,7 @@ const LanguageButton = () => {
             >
                 <MenuItem
                     onClick={() =>
-                        handleLanguageButtonClick(SUPPORTED_LANGUAGES.ES)
+                        handleLanguageButtonClick(SUPPORTED_LANGUAGES.SPANISH)
                     }
                 >
                     <Avatar src="spain-flag.webp" />
@@ -113,7 +113,7 @@ const LanguageButton = () => {
                 </MenuItem>
                 <MenuItem
                     onClick={() =>
-                        handleLanguageButtonClick(SUPPORTED_LANGUAGES.EN)
+                        handleLanguageButtonClick(SUPPORTED_LANGUAGES.ENGLISH)
                     }
                 >
                     <Avatar src="us-flag.webp" />
