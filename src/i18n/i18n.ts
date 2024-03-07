@@ -5,7 +5,7 @@ import esTranslations from '../locales/es.json';
 
 i18n.use(initReactI18next).init({
     fallbackLng: 'en',
-    debug: false, // TODO: Set to false in production
+    debug: false,
     resources: {
         en: {
             translation: enTranslations,
