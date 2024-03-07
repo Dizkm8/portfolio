@@ -24,6 +24,12 @@ const darkTheme = createTheme(baseDark, {
             },
             name: 'cBlack',
         }),
+        cYellow: baseDark.palette.augmentColor({
+            color: {
+                main: '#CCA300',
+            },
+            name: 'cYellow',
+        }),
     },
 });
 
@@ -34,6 +40,12 @@ const lightTheme = createTheme(baseLight, {
                 main: '#000000',
             },
             name: 'cBlack',
+        }),
+        cYellow: baseLight.palette.augmentColor({
+            color: {
+                main: '#FFD700',
+            },
+            name: 'cYellow',
         }),
     },
 });

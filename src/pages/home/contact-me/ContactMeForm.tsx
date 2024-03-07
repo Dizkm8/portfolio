@@ -4,6 +4,7 @@ import FormField from '../../../components/FormField';
 import { Button, SxProps, Theme } from '@mui/material';
 import { ContactMeFormValues } from '../../../types/contact-me-form-values';
 import { useTranslation } from 'react-i18next';
+import SubmitButton from '../../../components/SubmitButton';
 
 interface Props {
     fieldsData: ContactMeInformation[];
@@ -56,13 +57,9 @@ const ContactMeForm = (props: Props) => {
     return (
         <form>
             {fieldInputs}{' '}
-            <Button
-                fullWidth={true}
-                variant="contained"
-                onClick={handleSubmit(onSubmit)}
-            >
+            <SubmitButton handleSubmit={handleSubmit(onSubmit)}>
                 {t('send')}
-            </Button>
+            </SubmitButton>
         </form>
     );
 };
