@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { ContactMeInformation } from '../../../interfaces/contact-me-information.interface';
 import FormField from '../../../components/FormField';
-import { Button, SxProps, Theme } from '@mui/material';
+import { SxProps, Theme } from '@mui/material';
 import { ContactMeFormValues } from '../../../types/contact-me-form-values';
 import { useTranslation } from 'react-i18next';
 import SubmitButton from '../../../components/SubmitButton';
