@@ -11,6 +11,7 @@ import ThemeChangerButton from './ThemeChangerButton';
 import LanguageButton from './LanguageButton';
 import { useTranslation } from 'react-i18next';
 import { useStorage } from '../hooks/useStorage';
+import { mobileMaxWidth } from '../utils/media-query-sizes';
 
 interface Props {
     devName: string;
@@ -36,7 +37,7 @@ const UtilityBar = (props: Props) => {
     const burgerColor =
         theme === 'light' ? customColors.black : customColors.white;
 
-    const isMobileView = useMediaQuery('(max-width:600px)');
+    const isMobileView = useMediaQuery(`(max-width:${mobileMaxWidth}px)`);
 
     const toolbar = (
         <Toolbar>
