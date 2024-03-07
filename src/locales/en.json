@@ -19,5 +19,6 @@
     "aboutMeNav": "ABOUT ME",
     "projectsNav": "PROJECTS",
     "contactMeNav": "CONTACT ME",
-    "skillsNav": "SKILLS"
+    "skillsNav": "SKILLS",
+    "notFound": "Not Found"
 }
