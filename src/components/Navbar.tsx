@@ -21,7 +21,7 @@ const drawerWidth = 240;
 const devName = 'David Araya';
 
 const Navbar = () => {
-    const { theme, invertTheme } = useThemeMode();
+    const { theme } = useThemeMode();
     const { t } = useTranslation();
 
     const textColor =
@@ -86,7 +86,6 @@ const Navbar = () => {
                     handleOnButtonClick={handleOnButtonClick}
                     handleOnDevNameClick={handleOnDevNameClick}
                     navItems={navItems}
-                    changeTheme={invertTheme}
                 />
             </AppBar>
             <nav>

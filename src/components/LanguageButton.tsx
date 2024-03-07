@@ -4,7 +4,6 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import LanguageIcon from '@mui/icons-material/Language';
-import { useTheme } from '@mui/material/styles';
 import customColors from '../constants/custom-colors';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -12,6 +11,7 @@ import {
     ALL_LANGUAGES,
     SUPPORTED_LANGUAGES,
 } from '../i18n/supporter-languagues';
+import { useThemeMode } from '../hooks/useThemeMode';
 
 const styles = {
     menu: {
@@ -44,7 +44,7 @@ const styles = {
 
 const LanguageButton = () => {
     const { i18n } = useTranslation();
-    const theme = useTheme();
+    const { theme } = useThemeMode();
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -70,7 +70,7 @@ const LanguageButton = () => {
     };
 
     const iconColor =
-        theme.palette.mode === 'light' ? customColors.gray : customColors.white;
+        theme === 'light' ? customColors.gray : customColors.white;
 
     return (
         <>

@@ -8,7 +8,7 @@ import i18n from './i18n/i18n';
 import { useThemeMode } from './hooks/useThemeMode';
 
 const App = () => {
-    const { muiTheme } = useThemeMode();
+    const { theme, muiTheme, setTheme } = useThemeMode();
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -16,13 +16,14 @@ const App = () => {
             const targetId = hash.substring(1);
             smoothScrollToTarget(targetId);
         }
+        setTheme(theme);
     }, []);
 
     return (
         <I18nextProvider i18n={i18n}>
             <ThemeProvider theme={muiTheme}>
                 <CssBaseline />
-                <Navbar/>
+                <Navbar />
                 <Home />
             </ThemeProvider>
         </I18nextProvider>
