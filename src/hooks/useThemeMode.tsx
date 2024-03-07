@@ -2,8 +2,11 @@ import { create } from 'zustand';
 import { customTheme } from '../theme/custom-theme';
 import { Theme } from '@emotion/react';
 import { persist } from 'zustand/middleware';
+import { SUPPORTED_LANGUAGES } from '../i18n/supporter-languagues';
 
 interface ThemeMode {
+    language: SUPPORTED_LANGUAGES;
+    setLanguage: (newLanguage: SUPPORTED_LANGUAGES) => void;
     theme: string;
     muiTheme: Theme;
     setTheme: (newTheme: string) => void;
@@ -24,6 +27,9 @@ const selectMuiTheme = (theme: string) => {
 export const useThemeMode = create<ThemeMode>()(
     persist(
         (set) => ({
+            language: SUPPORTED_LANGUAGES.EN,
+            setLanguage: (newLanguage: SUPPORTED_LANGUAGES) =>
+                set({ language: newLanguage }),
             theme: 'light',
             muiTheme: customTheme.lightTheme,
             setTheme: (newTheme: string) =>
@@ -42,7 +48,10 @@ export const useThemeMode = create<ThemeMode>()(
         }),
         {
             name: 'theme-mode',
-            partialize: (state) => ({ theme: state.theme }),
+            partialize: (state) => ({
+                theme: state.theme,
+                language: state.language,
+            }),
         }
     )
 );

@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import LanguageIcon from '@mui/icons-material/Language';
 import customColors from '../constants/custom-colors';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     ALL_LANGUAGES,
@@ -44,7 +44,7 @@ const styles = {
 
 const LanguageButton = () => {
     const { i18n } = useTranslation();
-    const { theme } = useThemeMode();
+    const { theme, language, setLanguage } = useThemeMode();
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
@@ -52,9 +52,15 @@ const LanguageButton = () => {
         setAnchorEl(event.currentTarget);
     };
 
+    useEffect(() => {
+        i18n.changeLanguage(language);
+        setLanguage(language);
+    }, []);
+
     const changeLanguageHandler = (lang: SUPPORTED_LANGUAGES) => {
         if (ALL_LANGUAGES.includes(lang)) {
             i18n.changeLanguage(lang);
+            setLanguage(lang);
             return;
         }
         console.error(`Language not supported: ${lang}`);
