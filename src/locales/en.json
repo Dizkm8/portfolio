@@ -20,5 +20,7 @@
     "projectsNav": "PROJECTS",
     "contactMeNav": "CONTACT ME",
     "skillsNav": "SKILLS",
-    "notFound": "Not Found"
+    "notFound": "Not Found",
+    "notFoundDescription": "The page you are looking for does not exist.",
+    "backHome": "Back to Home"
 }
