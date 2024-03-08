@@ -30,6 +30,12 @@ const darkTheme = createTheme(baseDark, {
             },
             name: 'cYellow',
         }),
+        cOrange: baseDark.palette.augmentColor({
+            color: {
+                main: '#FFA500',
+            },
+            name: 'cOrange',
+        }),
     },
 });
 
@@ -46,6 +52,12 @@ const lightTheme = createTheme(baseLight, {
                 main: '#FFD700',
             },
             name: 'cYellow',
+        }),
+        cOrange: baseLight.palette.augmentColor({
+            color: {
+                main: '#FFA500',
+            },
+            name: 'cOrange',
         }),
     },
 });

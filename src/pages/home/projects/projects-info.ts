@@ -20,8 +20,19 @@ const nessfit: Project = {
     title: 'NessFit',
     image: 'nessfit.webp',
     description: 'Nessfit description',
-    frontendRepo: '',
-    backendRepo: 'https://github.com/Dizkm8/NESSFIT',
+    fullstackRepo: 'https://github.com/Dizkm8/NESSFIT',
 };
 
-export const projects: Project[] = [cubi12, psicoapp, nessfit];
+const dankoArayaPortfolio: Project = {
+    title: 'Danko Araya Portfolio',
+    image: 'danko-araya-portfolio.webp',
+    description: 'Danko Araya Portfolio description',
+    demoLink: 'https://dankoaraya.cl/',
+};
+
+export const projects: Project[] = [
+    cubi12,
+    psicoapp,
+    nessfit,
+    dankoArayaPortfolio,
+];

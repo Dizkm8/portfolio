@@ -5,7 +5,11 @@ export interface Project {
 
     description: string;
 
-    frontendRepo: string;
+    frontendRepo?: string;
 
-    backendRepo: string;
+    backendRepo?: string;
+
+    fullstackRepo?: string;
+
+    demoLink?: string;
 }

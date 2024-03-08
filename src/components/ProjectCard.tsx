@@ -8,6 +8,7 @@ import SourceCodeButton from './SourceCodeButton';
 import Divider from '@mui/material/Divider';
 import { CardActionArea } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import DemoButton from './DemoButton';
 
 const styles = {
     card: {
@@ -36,8 +37,43 @@ interface Props {
 
 const ProjectCard = (props: Props) => {
     const { project } = props;
-    const { title, image, description, frontendRepo, backendRepo } = project;
+    const {
+        title,
+        image,
+        description,
+        frontendRepo,
+        backendRepo,
+        demoLink,
+        fullstackRepo,
+    } = project;
     const { t } = useTranslation();
+
+    let buttons;
+
+    if (fullstackRepo) {
+        buttons = (
+            <SourceCodeButton fullWidth href={fullstackRepo} target="_blank">
+                Frontend + Backend
+            </SourceCodeButton>
+        );
+    } else if (demoLink) {
+        buttons = (
+            <DemoButton fullWidth href={demoLink} target="_blank">
+                Demo
+            </DemoButton>
+        );
+    } else {
+        buttons = (
+            <>
+                <SourceCodeButton fullWidth href={frontendRepo} target="_blank">
+                    Frontend
+                </SourceCodeButton>
+                <SourceCodeButton fullWidth href={backendRepo} target="_blank">
+                    Backend
+                </SourceCodeButton>
+            </>
+        );
+    }
 
     return (
         <Card sx={styles.card}>
@@ -62,22 +98,7 @@ const ProjectCard = (props: Props) => {
                     {t(description)}
                 </Typography>
             </CardContent>
-            <CardActions>
-                <SourceCodeButton
-                    fullWidth={true}
-                    href={frontendRepo}
-                    target="_blank"
-                >
-                    Frontend
-                </SourceCodeButton>
-                <SourceCodeButton
-                    fullWidth={true}
-                    href={backendRepo}
-                    target="_blank"
-                >
-                    Backend
-                </SourceCodeButton>
-            </CardActions>
+            <CardActions>{buttons}</CardActions>
         </Card>
     );
 };
