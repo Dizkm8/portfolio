@@ -8,6 +8,13 @@ const cubi12: Project = {
     backendRepo: 'https://github.com/Dizkm8/cubi12-api.git',
 };
 
+const dankoArayaPortfolio: Project = {
+    title: 'Danko Araya Portfolio',
+    image: 'danko-araya-portfolio.webp',
+    description: 'Danko Araya Portfolio description',
+    demoLink: 'https://dankoaraya.cl/',
+};
+
 const psicoapp: Project = {
     title: 'PsicoApp',
     image: 'psicoapp.webp',
@@ -23,16 +30,9 @@ const nessfit: Project = {
     fullstackRepo: 'https://github.com/Dizkm8/NESSFIT',
 };
 
-const dankoArayaPortfolio: Project = {
-    title: 'Danko Araya Portfolio',
-    image: 'danko-araya-portfolio.webp',
-    description: 'Danko Araya Portfolio description',
-    demoLink: 'https://dankoaraya.cl/',
-};
-
 export const projects: Project[] = [
     cubi12,
+    dankoArayaPortfolio,
     psicoapp,
     nessfit,
-    dankoArayaPortfolio,
 ];
