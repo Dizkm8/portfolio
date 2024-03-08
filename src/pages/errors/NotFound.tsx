@@ -1,6 +1,9 @@
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+
 const styles = {
     container: {
         display: 'flex',
@@ -26,9 +29,17 @@ const NotFoundPage = () => {
 
     return (
         <Container maxWidth="sm" sx={styles.container}>
-            <Typography component="p" variant="h5" sx={styles.h2}>
+            <Typography component="h2" variant="h2" sx={styles.h1}>
                 {t('notFound')}
             </Typography>
+            <Typography component="p" variant="h5" sx={styles.h2}>
+                {t('notFoundDescription')}
+            </Typography>
+            <Container maxWidth="xs" >
+                <Button variant="contained" color="primary" fullWidth component={Link} to={'/'}>
+                    {t('backHome')}
+                </Button>
+            </Container>
         </Container>
     );
 };
