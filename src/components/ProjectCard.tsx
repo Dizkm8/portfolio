@@ -9,6 +9,7 @@ import Divider from '@mui/material/Divider';
 import { CardActionArea } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import DemoButton from './DemoButton';
+import { Link } from 'react-router-dom';
 
 const styles = {
     card: {
@@ -39,6 +40,7 @@ const ProjectCard = (props: Props) => {
     const { project } = props;
     const {
         title,
+        slug,
         image,
         description,
         frontendRepo,
@@ -77,7 +79,7 @@ const ProjectCard = (props: Props) => {
 
     return (
         <Card sx={styles.card}>
-            <CardActionArea>
+            <CardActionArea component={Link} to={`/projects/${slug}`}>
                 <CardMedia sx={styles.media} image={image} title="Dvd" />
             </CardActionArea>
             <Divider />
