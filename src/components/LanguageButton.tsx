@@ -44,18 +44,13 @@ const styles = {
 
 const LanguageButton = () => {
     const { i18n } = useTranslation();
-    const { theme, language, setLanguage } = useStorage();
+    const { theme, setLanguage } = useStorage();
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
     };
-
-    useEffect(() => {
-        i18n.changeLanguage(language);
-        setLanguage(language);
-    }, []);
 
     const changeLanguageHandler = (lang: SUPPORTED_LANGUAGES) => {
         if (ALL_LANGUAGES.includes(lang)) {

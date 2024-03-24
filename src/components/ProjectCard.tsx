@@ -88,7 +88,7 @@ const ProjectCard = (props: Props) => {
                     component="div"
                     sx={styles.title}
                 >
-                    {title}
+                    {t(title)}
                 </Typography>
                 <Typography
                     variant="body2"

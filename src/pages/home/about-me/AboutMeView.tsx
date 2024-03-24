@@ -48,7 +48,7 @@ const AboutMeView = () => {
                 David Araya Cádiz
             </Typography>
             <Typography component="p" variant="h5" sx={styles.h2}>
-                {t('About me')}
+                {t('AboutMe')}
             </Typography>
             <SectionButton targetID={customID.projectsView} />
         </Container>

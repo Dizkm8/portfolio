@@ -10,10 +10,11 @@ interface Props {
 }
 
 const AppWrapper = ({ children }: Props) => {
-    const { theme, muiTheme, setTheme } = useStorage();
+    const { theme, muiTheme, setTheme, language } = useStorage();
 
     React.useEffect(() => {
         setTheme(theme);
+        i18n.changeLanguage(language);
     }, []);
 
     return (
