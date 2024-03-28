@@ -5,6 +5,7 @@ import NotFoundPage from '../errors/NotFound';
 import { Project } from '../../models/project';
 import { useTranslation } from 'react-i18next';
 import Carousel from 'react-material-ui-carousel';
+import ProjectStack from '../../components/ProjectStack';
 
 const styles = {
     container: {
@@ -28,7 +29,7 @@ const styles = {
         fontWeight: 400,
     },
     carousel: {
-        margin: '2rem 0',
+        margin: '2rem 0 3rem',
         width: '100%',
         height: '60vh',
     },
@@ -72,9 +73,10 @@ export const ProjectPage = () => {
             <Carousel sx={styles.carousel} height={styles.carousel.height}>
                 {items}
             </Carousel>
-            <Typography component="h2" variant="h2" align="left" sx={styles.h2}>
-                Tecnologías
+            <Typography component="h2" variant="h3" align="left" sx={styles.h2}>
+                {t('technologies')}
             </Typography>
+            <ProjectStack />
         </Container>
     );
 };
