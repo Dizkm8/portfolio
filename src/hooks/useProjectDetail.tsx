@@ -1,23 +1,17 @@
+import { Project } from '../models/project';
+import useProjects from './useProjects';
+import { ProjectNotFoundException } from '../pages/errors/ProjectNotFound';
+
 interface Props {
-    projectId: string;
+    projectSlug: string;
 }
 
-const useProjectDetail = (props: Props) => {
-    const { projectId } = props;
-    return {
-        projectDetail: {
-            id: projectId,
-            name: 'Project 1',
-            description: 'Project 1 description',
-            status: 'active',
-            startDate: '2021-01-01',
-            endDate: '2021-12-31',
-            budget: 1000000,
-            spent: 500000,
-            duration: 365,
-            progress: 50,
-        },
-    };
+const useProjectDetail = (props: Props): Project => {
+    const { projectSlug } = props;
+    const project = useProjects().find((p) => p.slug === projectSlug);
+    if (!project) throw new ProjectNotFoundException();
+
+    return project;
 };
 
 export default useProjectDetail;
