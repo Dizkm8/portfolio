@@ -12,13 +12,13 @@ import LanguageButton from './LanguageButton';
 import { useTranslation } from 'react-i18next';
 import { useStorage } from '../hooks/useStorage';
 import { mobileMaxWidth } from '../utils/media-query-sizes';
+import { Link } from 'react-router-dom';
 
 interface Props {
     devName: string;
     handleDrawerToggle: () => void;
     textColor: string;
     handleOnButtonClick: (id: string) => void;
-    handleOnDevNameClick: () => void;
     navItems: NavItem[];
 }
 
@@ -28,13 +28,12 @@ const UtilityBar = (props: Props) => {
         handleDrawerToggle,
         textColor,
         handleOnButtonClick,
-        handleOnDevNameClick,
         navItems,
     } = props;
     const { t } = useTranslation();
     const { theme } = useStorage();
 
-    const burgerColor =
+    const themeAwareColor =
         theme === 'light' ? customColors.black : customColors.white;
 
     const isMobileView = useMediaQuery(`(max-width:${mobileMaxWidth}px)`);
@@ -49,7 +48,7 @@ const UtilityBar = (props: Props) => {
                 sx={{
                     mr: 2,
                     display: { sm: 'none' },
-                    color: burgerColor,
+                    color: themeAwareColor,
                 }}
             >
                 <MenuIcon />
@@ -62,9 +61,13 @@ const UtilityBar = (props: Props) => {
                     display: { xs: 'none', sm: 'block' },
                     color: textColor,
                 }}
-                onClick={handleOnDevNameClick}
             >
-                {devName}
+                <Link
+                    style={{ textDecoration: 'none', color: themeAwareColor }}
+                    to={'/aaa'}
+                >
+                    {devName}
+                </Link>
             </Typography>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 {navItems.map(({ name, id }: NavItem) => (

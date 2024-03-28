@@ -10,12 +10,12 @@ import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import smoothScrollToTarget from '../utils/scroll-to-target';
 import useNavItems from '../hooks/useNavItems';
-import { customID } from '../pages/home/custom-id';
 import customColors from '../constants/custom-colors';
 import UtilityBar from './UtilityBar';
 import { NavItem } from '../interfaces/nav-item.interface';
 import { useTranslation } from 'react-i18next';
 import { useStorage } from '../hooks/useStorage';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 const devName = 'David Araya';
@@ -27,14 +27,10 @@ const Navbar = () => {
     const textColor =
         theme === 'light' ? customColors.gray : customColors.white;
 
-    const navBarColor =
+    const themeAwareColor =
         theme === 'light' ? customColors.white : customColors.black;
 
     const navItems = useNavItems();
-
-    const handleOnDevNameClick = () => {
-        handleOnButtonClick(customID.aboutMeView);
-    };
 
     const handleOnButtonClick = (targetID: string) => {
         smoothScrollToTarget(targetID);
@@ -48,13 +44,15 @@ const Navbar = () => {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <Typography
-                variant="h6"
-                sx={{ my: 2, color: textColor }}
-                onClick={handleOnDevNameClick}
+            <Link
+                to={'/aaa'}
+                style={{ textDecoration: 'none', color: themeAwareColor }}
             >
-                {devName}
-            </Typography>
+                <Typography variant="h6" sx={{ my: 2, color: textColor }}>
+                    {devName}
+                </Typography>
+            </Link>
+
             <Divider />
             <List>
                 {navItems.map(({ id, name }: NavItem) => (
@@ -76,7 +74,7 @@ const Navbar = () => {
             <AppBar
                 component="nav"
                 sx={{
-                    backgroundColor: navBarColor,
+                    backgroundColor: themeAwareColor,
                 }}
             >
                 <UtilityBar
@@ -84,7 +82,6 @@ const Navbar = () => {
                     handleDrawerToggle={handleDrawerToggle}
                     textColor={textColor}
                     handleOnButtonClick={handleOnButtonClick}
-                    handleOnDevNameClick={handleOnDevNameClick}
                     navItems={navItems}
                 />
             </AppBar>
