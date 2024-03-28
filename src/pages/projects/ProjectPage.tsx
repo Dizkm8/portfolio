@@ -2,6 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import useProjectDetail from '../../hooks/useProjectDetail';
 import NotFoundPage from '../errors/NotFound';
+import { Project } from '../../models/project';
 
 const styles = {
     container: {
@@ -20,17 +21,24 @@ const styles = {
 };
 
 export const ProjectPage = () => {
-    const { projectId } = useParams();
+    let project: Project | undefined;
+    const { projectSlug } = useParams();
 
-    if (!projectId) {
+    if (!projectSlug) {
         return <NotFoundPage />;
     }
-    const { projectDetail } = useProjectDetail({ projectId });
+    try {
+        project = useProjectDetail({
+            projectSlug,
+        });
+    } catch {
+        return <NotFoundPage />;
+    }
 
     return (
         <Container maxWidth="sm" sx={styles.container}>
             <Typography component="h1" variant="h2" sx={styles.h1}>
-                {projectDetail.name}
+                {project.title}
             </Typography>
         </Container>
     );
