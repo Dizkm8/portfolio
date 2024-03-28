@@ -64,7 +64,7 @@ const UtilityBar = (props: Props) => {
             >
                 <Link
                     style={{ textDecoration: 'none', color: themeAwareColor }}
-                    to={'/aaa'}
+                    to={'/'}
                 >
                     {devName}
                 </Link>

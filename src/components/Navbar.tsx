@@ -45,7 +45,7 @@ const Navbar = () => {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Link
-                to={'/aaa'}
+                to={'/'}
                 style={{ textDecoration: 'none', color: themeAwareColor }}
             >
                 <Typography variant="h6" sx={{ my: 2, color: textColor }}>
