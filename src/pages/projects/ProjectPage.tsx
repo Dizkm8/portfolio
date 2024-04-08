@@ -26,6 +26,7 @@ const styles = {
         marginBottom: '1rem',
     },
     galleryTitle: {
+        fontWeight: 500,
         marginTop: '2rem',
         marginBottom: '1rem',
     },
@@ -59,15 +60,15 @@ export const ProjectPage = () => {
                 {t(project.description)}
             </Typography>
             <Typography
-                component="p"
-                variant="h4"
+                component="h2"
+                variant="h3"
                 align="left"
                 sx={styles.galleryTitle}
             >
                 {t('imageGallery')}
             </Typography>
             <ImageCarousel carouselImages={project.carouselImages} />
-            <Typography component="h2" variant="h3" align="left" sx={styles.h2}>
+            <Typography component="h3" variant="h3" align="left" sx={styles.h2}>
                 {t('technologies')}
             </Typography>
             <ProjectStack techStack={project.techStack} />

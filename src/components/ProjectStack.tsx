@@ -18,6 +18,7 @@ const styles = {
     },
     stackCategory: {
         marginBottom: '1rem',
+        fontWeight: 500,
     },
     stackTitle: {
         margin: '1rem 0',
@@ -41,7 +42,7 @@ const ProjectStack = (props: Props) => {
             {techStack.map(({ category, title, imageName }) => (
                 <Grid item md={4} xs={12} key={title}>
                     <Box sx={styles.box}>
-                        <Typography sx={styles.stackCategory} variant="h6">
+                        <Typography sx={styles.stackCategory} variant="h5">
                             {t(category)}
                         </Typography>
                         <img

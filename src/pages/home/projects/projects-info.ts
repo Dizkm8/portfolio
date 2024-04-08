@@ -53,8 +53,8 @@ const dankoArayaPortfolio: Project = {
     techStack: [
         {
             category: 'frontend',
-            title: 'HTML',
-            imageName: 'react.webp',
+            title: 'HTML 5',
+            imageName: 'html.webp',
         },
         {
             category: 'uiLibrary',
