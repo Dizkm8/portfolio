@@ -30,5 +30,6 @@
     "backend": "Backend",
     "db": "Database",
     "uiLibrary": "UI Library",
-    "jsLibrary": "JS Library"
+    "jsLibrary": "JS Library",
+    "imageGallery": "Image Gallery"
 }
