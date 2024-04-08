@@ -7,6 +7,11 @@ const cubi12: Project = {
     description: 'Cubi12 description',
     frontendRepo: 'https://github.com/Dizkm8/cubi12-front.git',
     backendRepo: 'https://github.com/Dizkm8/cubi12-api.git',
+    carouselImages: {
+        namespace: 'cubi12',
+        desktopImages: [],
+        mobileImages: [],
+    },
     techStack: [
         {
             category: 'frontend',
@@ -32,6 +37,19 @@ const dankoArayaPortfolio: Project = {
     image: 'danko-araya-portfolio.webp',
     description: 'Danko Araya Portfolio description',
     demoLink: 'https://dankoaraya.cl/',
+    carouselImages: {
+        namespace: 'danko-araya',
+        desktopImages: [
+            'danko-araya-carousel-1.webp',
+            'danko-araya-carousel-2.webp',
+            'danko-araya-carousel-3.webp',
+        ],
+        mobileImages: [
+            'danko-araya-carousel-responsive-1.webp',
+            'danko-araya-carousel-responsive-2.webp',
+            'danko-araya-carousel-responsive-3.webp',
+        ],
+    },
     techStack: [
         {
             category: 'frontend',
@@ -58,6 +76,11 @@ const psicoapp: Project = {
     description: 'Psicoapp description',
     frontendRepo: 'https://github.com/Dizkm8/psicoapp-frontend',
     backendRepo: 'https://github.com/Dizkm8/psicoapp-backend',
+    carouselImages: {
+        namespace: 'psicoapp',
+        desktopImages: [],
+        mobileImages: [],
+    },
     techStack: [
         {
             category: 'frontend',
@@ -83,6 +106,11 @@ const nessfit: Project = {
     image: 'nessfit.webp',
     description: 'Nessfit description',
     fullstackRepo: 'https://github.com/Dizkm8/NESSFIT',
+    carouselImages: {
+        namespace: 'nessfit',
+        desktopImages: [],
+        mobileImages: [],
+    },
     techStack: [
         {
             category: 'frontend',

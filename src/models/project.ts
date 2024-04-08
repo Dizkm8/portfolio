@@ -1,3 +1,4 @@
+import { CarouselImages } from './carousel-images';
 import { ProjectTech } from './project-tech';
 
 export interface Project {
@@ -16,6 +17,8 @@ export interface Project {
     fullstackRepo?: string;
 
     demoLink?: string;
+
+    carouselImages: CarouselImages;
 
     techStack: ProjectTech[];
 }

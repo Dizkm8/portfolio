@@ -1,10 +1,11 @@
 import Carousel from 'react-material-ui-carousel';
-import { Project } from '../models/project';
 import { CSSProperties } from 'react';
+import { CarouselImages } from '../models/carousel-images';
+import useMobileMediaQuery from '../hooks/useMobileMediaQuery';
 
 const styles = {
     carousel: {
-        margin: '2rem 0 3rem',
+        margin: '0 0 3rem',
         width: '100%',
         border: '1px solid #e0e0e0',
         borderTop: 'none',
@@ -17,16 +18,31 @@ const styles = {
 };
 
 interface Props {
-    project: Project;
+    carouselImages: CarouselImages;
 }
 
+const generateImages = (
+    carouselImages: CarouselImages,
+    isMobileView: boolean
+) => {
+    const { desktopImages, mobileImages, namespace } = carouselImages;
+
+    const items = isMobileView ? mobileImages : desktopImages;
+    return items.map((imageUrl) => (
+        <img
+            key={imageUrl}
+            src={`./../projects/${namespace}/${imageUrl}`}
+            style={styles.image}
+        />
+    ));
+};
+
 const ImageCarousel = (props: Props) => {
-    const { project } = props;
-    const imageUrl = `./../${project.image}`;
+    const { carouselImages } = props;
+    const { isMobileView } = useMobileMediaQuery();
+    const images = generateImages(carouselImages, isMobileView);
 
-    const items = [<img key={imageUrl} src={imageUrl} style={styles.image} />];
-
-    return <Carousel sx={styles.carousel}>{items}</Carousel>;
+    return <Carousel sx={styles.carousel}>{images}</Carousel>;
 };
 
 export default ImageCarousel;
