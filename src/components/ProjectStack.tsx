@@ -39,7 +39,7 @@ const ProjectStack = (props: Props) => {
     return (
         <Grid container sx={styles.container} maxWidth="md">
             {techStack.map(({ category, title, imageName }) => (
-                <Grid item md={4} xs={12}>
+                <Grid item md={4} xs={12} key={title}>
                     <Box sx={styles.box}>
                         <Typography sx={styles.stackCategory} variant="h6">
                             {t(category)}

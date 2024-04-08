@@ -4,8 +4,8 @@ import useProjectDetail from '../../hooks/useProjectDetail';
 import NotFoundPage from '../errors/NotFound';
 import { Project } from '../../models/project';
 import { useTranslation } from 'react-i18next';
-import Carousel from 'react-material-ui-carousel';
 import ProjectStack from '../../components/ProjectStack';
+import ImageCarousel from '../../components/ImageCarousel';
 
 const styles = {
     container: {
@@ -28,18 +28,6 @@ const styles = {
     p: {
         fontWeight: 400,
     },
-    carousel: {
-        margin: '2rem 0 3rem',
-        width: '100%',
-        height: '60vh',
-        border: '1px solid #e0e0e0',
-        borderTop: 'none',
-    },
-    image: {
-        width: '100%',
-        height: 'auto',
-        objectFit: 'cover',
-    },
 };
 
 export const ProjectPage = () => {
@@ -57,12 +45,6 @@ export const ProjectPage = () => {
     } catch {
         return <NotFoundPage />;
     }
-    const imageUrl = `./../${project.image}`;
-
-    const items = [
-        // @ts-ignore
-        <img key={imageUrl} src={imageUrl} style={styles.image} />,
-    ];
 
     return (
         <Container maxWidth="lg" sx={styles.container}>
@@ -72,9 +54,7 @@ export const ProjectPage = () => {
             <Typography component="p" variant="h6" align="left" sx={styles.p}>
                 {t(project.description)}
             </Typography>
-            <Carousel sx={styles.carousel} height={styles.carousel.height}>
-                {items}
-            </Carousel>
+            <ImageCarousel project={project} />
             <Typography component="h2" variant="h3" align="left" sx={styles.h2}>
                 {t('technologies')}
             </Typography>

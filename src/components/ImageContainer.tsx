@@ -11,7 +11,7 @@ const styles = {
         maxHeight: '100%',
     },
 };
-
+// TODO: Use this or delete
 const ImageComponent = ({ imageUrl }) => {
     return (
         <div style={styles.container}>
