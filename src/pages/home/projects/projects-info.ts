@@ -92,7 +92,7 @@ const nessfit: Project = {
         {
             category: 'backend',
             title: 'Spring Boot 2',
-            imageName: 'springboot.webp',
+            imageName: 'spring.webp',
         },
         {
             category: 'db',
