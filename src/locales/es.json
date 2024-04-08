@@ -25,5 +25,8 @@
     "notFoundDescription": "Lo siento, la página que buscas no existe.",
     "backHome": "Volver a la página de inicio",
     "Danko Araya Portfolio": "Portafolio Danko Araya",
-    "technologies": "Tecnologías"
+    "technologies": "Tecnologías",
+    "frontend": "Cliente",
+    "backend": "Servidor",
+    "db": "Base de Datos"
 }

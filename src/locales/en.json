@@ -25,5 +25,8 @@
     "notFoundDescription": "The page you are looking for does not exist.",
     "backHome": "Back to Home",
     "Danko Araya Portfolio": "Danko Araya Portfolio",
-    "technologies": "Technologies"
+    "technologies": "Technologies",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "db": "Database"
 }

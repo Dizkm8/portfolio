@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const styles = {
     container: {
@@ -14,41 +15,50 @@ const styles = {
         width: '40%',
         height: 'auto',
     },
-    stackTitle: {
+    stackCategory: {
         marginBottom: '1rem',
+    },
+    stackTitle: {
+        margin: '1rem 0',
     },
 };
 
-const stack = [
+const stackItems = [
     {
-        title: 'Frontend',
-        image: './../react-icon.webp',
+        category: 'frontend',
+        title: 'React 18',
+        image: './../stack-icons/react.webp',
     },
     {
-        title: 'Backend',
-        image: './../nodejs-icon.webp',
+        category: 'backend',
+        title: '.NET 7.0',
+        image: './../stack-icons/dotnet.webp',
     },
     {
-        title: 'Base de Datos',
-        image: './../mongodb-icon.webp',
+        category: 'db',
+        title: 'MS SQL Server',
+        image: './../stack-icons/mssqlserver.webp',
     },
 ];
 
-const items = stack.map((item) => {
-    return (
-        <Grid item md={4} xs={12}>
-            <Box sx={styles.box}>
-                <Typography sx={styles.stackTitle}>{item.title}</Typography>
-                <img src={item.image} style={styles.image} />
-            </Box>
-        </Grid>
-    );
-});
-
 const ProjectStack = () => {
+    const { t } = useTranslation();
+
     return (
         <Grid container sx={styles.container} maxWidth="md">
-            {items}
+            {stackItems.map(({ category, title, image }) => (
+                <Grid item md={4} xs={12}>
+                    <Box sx={styles.box}>
+                        <Typography sx={styles.stackCategory} variant="h6">
+                            {t(category)}
+                        </Typography>
+                        <img src={image} style={styles.image} />
+                        <Typography sx={styles.stackTitle} variant="subtitle1">
+                            {t(title)}
+                        </Typography>
+                    </Box>
+                </Grid>
+            ))}
         </Grid>
     );
 };
