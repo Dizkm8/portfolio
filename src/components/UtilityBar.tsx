@@ -6,13 +6,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NavItem } from '../interfaces/nav-item.interface';
 import customColors from '../constants/custom-colors';
-import { useMediaQuery } from '@mui/material';
 import ThemeChangerButton from './ThemeChangerButton';
 import LanguageButton from './LanguageButton';
 import { useTranslation } from 'react-i18next';
 import { useStorage } from '../hooks/useStorage';
-import { mobileMaxWidth } from '../utils/media-query-sizes';
 import { Link } from 'react-router-dom';
+import useMobileMediaQuery from '../hooks/useMobileMediaQuery';
 
 interface Props {
     devName: string;
@@ -36,7 +35,8 @@ const UtilityBar = (props: Props) => {
     const themeAwareColor =
         theme === 'light' ? customColors.black : customColors.white;
 
-    const isMobileView = useMediaQuery(`(max-width:${mobileMaxWidth}px)`);
+    // const isMobileView = useMediaQuery(`(max-width:${mobileMaxWidth}px)`);
+    const { isMobileView } = useMobileMediaQuery();
 
     const toolbar = (
         <Toolbar>
