@@ -28,5 +28,7 @@
     "technologies": "Technologies",
     "frontend": "Frontend",
     "backend": "Backend",
-    "db": "Database"
+    "db": "Database",
+    "uiLibrary": "UI Library",
+    "jsLibrary": "JS Library"
 }

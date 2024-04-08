@@ -32,6 +32,8 @@ const styles = {
         margin: '2rem 0 3rem',
         width: '100%',
         height: '60vh',
+        border: '1px solid #e0e0e0',
+        borderTop: 'none',
     },
     image: {
         width: '100%',
@@ -76,7 +78,7 @@ export const ProjectPage = () => {
             <Typography component="h2" variant="h3" align="left" sx={styles.h2}>
                 {t('technologies')}
             </Typography>
-            <ProjectStack />
+            <ProjectStack techStack={project.techStack} />
         </Container>
     );
 };

@@ -1,5 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { ProjectTech } from '../models/project-tech';
 
 const styles = {
     container: {
@@ -23,36 +24,30 @@ const styles = {
     },
 };
 
-const stackItems = [
-    {
-        category: 'frontend',
-        title: 'React 18',
-        image: './../stack-icons/react.webp',
-    },
-    {
-        category: 'backend',
-        title: '.NET 7.0',
-        image: './../stack-icons/dotnet.webp',
-    },
-    {
-        category: 'db',
-        title: 'MS SQL Server',
-        image: './../stack-icons/mssqlserver.webp',
-    },
-];
+const urlPathGenerator = (imageName: string) => {
+    return `./../stack-icons/${imageName}`;
+};
 
-const ProjectStack = () => {
+interface Props {
+    techStack: ProjectTech[];
+}
+
+const ProjectStack = (props: Props) => {
+    const { techStack } = props;
     const { t } = useTranslation();
 
     return (
         <Grid container sx={styles.container} maxWidth="md">
-            {stackItems.map(({ category, title, image }) => (
+            {techStack.map(({ category, title, imageName }) => (
                 <Grid item md={4} xs={12}>
                     <Box sx={styles.box}>
                         <Typography sx={styles.stackCategory} variant="h6">
                             {t(category)}
                         </Typography>
-                        <img src={image} style={styles.image} />
+                        <img
+                            src={urlPathGenerator(imageName)}
+                            style={styles.image}
+                        />
                         <Typography sx={styles.stackTitle} variant="subtitle1">
                             {t(title)}
                         </Typography>

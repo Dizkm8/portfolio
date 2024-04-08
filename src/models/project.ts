@@ -1,3 +1,5 @@
+import { ProjectTech } from './project-tech';
+
 export interface Project {
     title: string;
 
@@ -14,4 +16,6 @@ export interface Project {
     fullstackRepo?: string;
 
     demoLink?: string;
+
+    techStack: ProjectTech[];
 }
