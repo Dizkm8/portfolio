@@ -86,8 +86,16 @@ const psicoapp: Project = {
     backendRepo: 'https://github.com/Dizkm8/psicoapp-backend',
     carouselImages: {
         namespace: 'psicoapp',
-        desktopImages: [],
-        mobileImages: [],
+        desktopImages: [
+            'psicoapp-carousel-1.webp',
+            'psicoapp-carousel-2.webp',
+            'psicoapp-carousel-3.webp',
+        ],
+        mobileImages: [
+            'psicoapp-carousel-responsive-1.webp',
+            'psicoapp-carousel-responsive-2.webp',
+            'psicoapp-carousel-responsive-3.webp',
+        ],
     },
     techStack: [
         {
