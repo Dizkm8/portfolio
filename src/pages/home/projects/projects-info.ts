@@ -124,8 +124,16 @@ const nessfit: Project = {
     fullstackRepo: 'https://github.com/Dizkm8/NESSFIT',
     carouselImages: {
         namespace: 'nessfit',
-        desktopImages: [],
-        mobileImages: [],
+        desktopImages: [
+            'nessfit-carousel-1.webp',
+            'nessfit-carousel-2.webp',
+            'nessfit-carousel-3.webp',
+        ],
+        mobileImages: [
+            'nessfit-carousel-responsive-1.webp',
+            'nessfit-carousel-responsive-2.webp',
+            'nessfit-carousel-responsive-3.webp',
+        ],
     },
     techStack: [
         {
