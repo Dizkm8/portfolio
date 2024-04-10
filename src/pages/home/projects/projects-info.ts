@@ -9,8 +9,16 @@ const cubi12: Project = {
     backendRepo: 'https://github.com/Dizkm8/cubi12-api.git',
     carouselImages: {
         namespace: 'cubi12',
-        desktopImages: [],
-        mobileImages: [],
+        desktopImages: [
+            'cubi12-carousel-1.webp',
+            'cubi12-carousel-2.webp',
+            'cubi12-carousel-3.webp',
+        ],
+        mobileImages: [
+            'cubi12-carousel-responsive-1.webp',
+            'cubi12-carousel-responsive-2.webp',
+            'cubi12-carousel-responsive-3.webp',
+        ],
     },
     techStack: [
         {
